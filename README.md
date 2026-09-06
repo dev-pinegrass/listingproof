@@ -29,3 +29,7 @@ With local server running: `node --experimental-strip-types --test tests/http.te
 Exact source provenance does not prove a model's semantic conclusion. A source may be incorrect. Numeric checks cover simple volume and pack expressions only, not every unit, range, or composite claim. Each line should contain one factual claim. All outputs need human review; this is not product or legal certification. Manual draft edits are not reverified. No model evaluation score is claimed before testing real Bedrock output against a held-out reference set.
 
 Hackathon rules impose no AI provider requirement. Bedrock was selected to use the existing AWS ecosystem. See HACKATHON.md for submission requirements and deadlines.
+
+## Hosted Bedrock connection
+
+The private hosted app uses the scoped Lambda backend documented in aws-backend/README.md. For local full-flow testing, put BEDROCK_BACKEND_URL and BEDROCK_BACKEND_TOKEN in ignored .dev.vars. Never commit that file. The direct temporary Bedrock-token path remains available for development.

@@ -1,0 +1,438 @@
+{
+  "created": "2026-09-06T09:32:57.905Z",
+  "method": "AWS CLI using the exact current app prompt and shared result validator; not hosted HTTP end-to-end",
+  "dataset": "20 development-authored synthetic cases; not blind or independent",
+  "model": "amazon.nova-lite-v1:0",
+  "total": 20,
+  "correct": 20,
+  "agreement": 1,
+  "unsupportedPrecision": 1,
+  "unsupportedRecall": 1,
+  "errors": 0,
+  "rows": [
+    {
+      "id": "E01",
+      "expected": "supported",
+      "actual": "supported",
+      "correct": true,
+      "model": "amazon.nova-lite-v1:0",
+      "ms": 3775,
+      "finding": {
+        "claimId": "C1",
+        "status": "supported",
+        "sourceId": "S1",
+        "quote": "Capacity: 0.75 L.",
+        "reason": "The claim 'Capacity: 750 ml.' is supported by the source 'Capacity: 0.75 L.' as 750 ml is equivalent to 0.75 L.",
+        "replacement": "Capacity: 750 ml.",
+        "numericCheck": "750 ml vs 750 ml"
+      },
+      "usage": {
+        "inputTokens": 198,
+        "outputTokens": 107,
+        "totalTokens": 305
+      }
+    },
+    {
+      "id": "E02",
+      "expected": "contradicted",
+      "actual": "contradicted",
+      "correct": true,
+      "model": "amazon.nova-lite-v1:0",
+      "ms": 3523,
+      "finding": {
+        "claimId": "C1",
+        "status": "contradicted",
+        "sourceId": "S1",
+        "quote": "Pack of 4.",
+        "reason": "The claim states 'Pack of 8.' while the source states 'Pack of 4.', which contradicts the claim.",
+        "replacement": "Pack of 4.",
+        "numericCheck": "8 items vs 4 items"
+      },
+      "usage": {
+        "inputTokens": 191,
+        "outputTokens": 86,
+        "totalTokens": 277
+      }
+    },
+    {
+      "id": "E03",
+      "expected": "unsupported",
+      "actual": "unsupported",
+      "correct": true,
+      "model": "amazon.nova-lite-v1:0",
+      "ms": 3697,
+      "finding": {
+        "claimId": "C1",
+        "status": "unsupported",
+        "sourceId": null,
+        "quote": "",
+        "reason": "No verifiable source span. Any proposed citation was discarded.",
+        "replacement": ""
+      },
+      "usage": {
+        "inputTokens": 188,
+        "outputTokens": 68,
+        "totalTokens": 256
+      }
+    },
+    {
+      "id": "E04",
+      "expected": "contradicted",
+      "actual": "contradicted",
+      "correct": true,
+      "model": "amazon.nova-lite-v1:0",
+      "ms": 3716,
+      "finding": {
+        "claimId": "C1",
+        "status": "contradicted",
+        "sourceId": "S1",
+        "quote": "Composition: 70% wool and 30% nylon.",
+        "reason": "The claim states the product is made entirely from wool, but the source indicates it is only 70% wool and 30% nylon.",
+        "replacement": "Composition: 70% wool and 30% nylon."
+      },
+      "usage": {
+        "inputTokens": 200,
+        "outputTokens": 100,
+        "totalTokens": 300
+      }
+    },
+    {
+      "id": "E05",
+      "expected": "supported",
+      "actual": "supported",
+      "correct": true,
+      "model": "amazon.nova-lite-v1:0",
+      "ms": 3570,
+      "finding": {
+        "claimId": "C1",
+        "status": "supported",
+        "sourceId": "S1",
+        "quote": "Care: machine wash cold.",
+        "reason": "The claim 'Machine washable.' is supported by the source which states 'Care: machine wash cold.'",
+        "replacement": "Machine washable."
+      },
+      "usage": {
+        "inputTokens": 190,
+        "outputTokens": 82,
+        "totalTokens": 272
+      }
+    },
+    {
+      "id": "E06",
+      "expected": "contradicted",
+      "actual": "contradicted",
+      "correct": true,
+      "model": "amazon.nova-lite-v1:0",
+      "ms": 3673,
+      "finding": {
+        "claimId": "C1",
+        "status": "contradicted",
+        "sourceId": "S1",
+        "quote": "Care: hand wash only. Do not put in dishwasher.",
+        "reason": "The source explicitly states that the product should be hand washed only and should not be put in the dishwasher, contradicting the claim that it is dishwasher safe.",
+        "replacement": "Care: hand wash only. Do not put in dishwasher."
+      },
+      "usage": {
+        "inputTokens": 198,
+        "outputTokens": 98,
+        "totalTokens": 296
+      }
+    },
+    {
+      "id": "E07",
+      "expected": "unsupported",
+      "actual": "unsupported",
+      "correct": true,
+      "model": "amazon.nova-lite-v1:0",
+      "ms": 3641,
+      "finding": {
+        "claimId": "C1",
+        "status": "unsupported",
+        "sourceId": null,
+        "quote": "",
+        "reason": "No verifiable source span. Any proposed citation was discarded.",
+        "replacement": ""
+      },
+      "usage": {
+        "inputTokens": 188,
+        "outputTokens": 67,
+        "totalTokens": 255
+      }
+    },
+    {
+      "id": "E08",
+      "expected": "supported",
+      "actual": "supported",
+      "correct": true,
+      "model": "amazon.nova-lite-v1:0",
+      "ms": 3775,
+      "finding": {
+        "claimId": "C1",
+        "status": "supported",
+        "sourceId": "S1",
+        "quote": "Box contents: one bottle and two lids.",
+        "reason": "The claim that the product includes two lids is supported by the source which states 'Box contents: one bottle and two lids.'",
+        "replacement": "Includes two lids."
+      },
+      "usage": {
+        "inputTokens": 195,
+        "outputTokens": 89,
+        "totalTokens": 284
+      }
+    },
+    {
+      "id": "E09",
+      "expected": "contradicted",
+      "actual": "contradicted",
+      "correct": true,
+      "model": "amazon.nova-lite-v1:0",
+      "ms": 3775,
+      "finding": {
+        "claimId": "C1",
+        "status": "contradicted",
+        "sourceId": "S1",
+        "quote": "Capacity: 1500 ml.",
+        "reason": "The claim states a capacity of 2 L, while the source states a capacity of 1500 ml, which is contradictory.",
+        "replacement": "Capacity: 1500 ml.",
+        "numericCheck": "2000 ml vs 1500 ml"
+      },
+      "usage": {
+        "inputTokens": 196,
+        "outputTokens": 93,
+        "totalTokens": 289
+      }
+    },
+    {
+      "id": "E10",
+      "expected": "supported",
+      "actual": "supported",
+      "correct": true,
+      "model": "amazon.nova-lite-v1:0",
+      "ms": 3465,
+      "finding": {
+        "claimId": "C1",
+        "status": "supported",
+        "sourceId": "S1",
+        "quote": "Pack of 10.",
+        "reason": "The claim 'Pack of 10.' is directly supported by the source text 'Pack of 10.' with matching start and end positions.",
+        "replacement": "Pack of 10.",
+        "numericCheck": "10 items vs 10 items"
+      },
+      "usage": {
+        "inputTokens": 193,
+        "outputTokens": 92,
+        "totalTokens": 285
+      }
+    },
+    {
+      "id": "E11",
+      "expected": "contradicted",
+      "actual": "contradicted",
+      "correct": true,
+      "model": "amazon.nova-lite-v1:0",
+      "ms": 3625,
+      "finding": {
+        "claimId": "C1",
+        "status": "contradicted",
+        "sourceId": "S1",
+        "quote": "Indoor use only.",
+        "reason": "The source explicitly states 'Indoor use only,' which contradicts the claim that the product is suitable for outdoor use.",
+        "replacement": "Indoor use only."
+      },
+      "usage": {
+        "inputTokens": 193,
+        "outputTokens": 85,
+        "totalTokens": 278
+      }
+    },
+    {
+      "id": "E12",
+      "expected": "unsupported",
+      "actual": "unsupported",
+      "correct": true,
+      "model": "amazon.nova-lite-v1:0",
+      "ms": 3469,
+      "finding": {
+        "claimId": "C1",
+        "status": "unsupported",
+        "sourceId": null,
+        "quote": "",
+        "reason": "No verifiable source span. Any proposed citation was discarded.",
+        "replacement": ""
+      },
+      "usage": {
+        "inputTokens": 197,
+        "outputTokens": 66,
+        "totalTokens": 263
+      }
+    },
+    {
+      "id": "E13",
+      "expected": "contradicted",
+      "actual": "contradicted",
+      "correct": true,
+      "model": "amazon.nova-lite-v1:0",
+      "ms": 3437,
+      "finding": {
+        "claimId": "C1",
+        "status": "contradicted",
+        "sourceId": "S1",
+        "quote": "Batteries are not included.",
+        "reason": "The claim states that a battery is included, but the source explicitly contradicts this by stating that batteries are not included.",
+        "replacement": "Batteries are not included."
+      },
+      "usage": {
+        "inputTokens": 190,
+        "outputTokens": 85,
+        "totalTokens": 275
+      }
+    },
+    {
+      "id": "E14",
+      "expected": "supported",
+      "actual": "supported",
+      "correct": true,
+      "model": "amazon.nova-lite-v1:0",
+      "ms": 3552,
+      "finding": {
+        "claimId": "C1",
+        "status": "supported",
+        "sourceId": "S1",
+        "quote": "Available colors: red, blue and black.",
+        "reason": "The claim that the product is available in red is supported by the source, which lists red as one of the available colors.",
+        "replacement": "Available in red."
+      },
+      "usage": {
+        "inputTokens": 194,
+        "outputTokens": 88,
+        "totalTokens": 282
+      }
+    },
+    {
+      "id": "E15",
+      "expected": "contradicted",
+      "actual": "contradicted",
+      "correct": true,
+      "model": "amazon.nova-lite-v1:0",
+      "ms": 3789,
+      "finding": {
+        "claimId": "C1",
+        "status": "contradicted",
+        "sourceId": "S1",
+        "quote": "Splash-resistant. Do not immerse in water.",
+        "reason": "The claim 'Waterproof.' contradicts the source which states 'Do not immerse in water.'",
+        "replacement": "Splash-resistant. Do not immerse in water."
+      },
+      "usage": {
+        "inputTokens": 194,
+        "outputTokens": 86,
+        "totalTokens": 280
+      }
+    },
+    {
+      "id": "E16",
+      "expected": "supported",
+      "actual": "supported",
+      "correct": true,
+      "model": "amazon.nova-lite-v1:0",
+      "ms": 3489,
+      "finding": {
+        "claimId": "C1",
+        "status": "supported",
+        "sourceId": "S1",
+        "quote": "Country of manufacture: India.",
+        "reason": "The claim 'Made in India.' is supported by the source 'Country of manufacture: India.'",
+        "replacement": "Made in India."
+      },
+      "usage": {
+        "inputTokens": 191,
+        "outputTokens": 81,
+        "totalTokens": 272
+      }
+    },
+    {
+      "id": "E17",
+      "expected": "unsupported",
+      "actual": "unsupported",
+      "correct": true,
+      "model": "amazon.nova-lite-v1:0",
+      "ms": 3400,
+      "finding": {
+        "claimId": "C1",
+        "status": "unsupported",
+        "sourceId": null,
+        "quote": "",
+        "reason": "No verifiable source span. Any proposed citation was discarded.",
+        "replacement": ""
+      },
+      "usage": {
+        "inputTokens": 195,
+        "outputTokens": 66,
+        "totalTokens": 261
+      }
+    },
+    {
+      "id": "E18",
+      "expected": "unsupported",
+      "actual": "unsupported",
+      "correct": true,
+      "model": "amazon.nova-lite-v1:0",
+      "ms": 3778,
+      "finding": {
+        "claimId": "C1",
+        "status": "unsupported",
+        "sourceId": null,
+        "quote": "",
+        "reason": "No verifiable source span. Any proposed citation was discarded.",
+        "replacement": ""
+      },
+      "usage": {
+        "inputTokens": 201,
+        "outputTokens": 66,
+        "totalTokens": 267
+      }
+    },
+    {
+      "id": "E19",
+      "expected": "unsupported",
+      "actual": "unsupported",
+      "correct": true,
+      "model": "amazon.nova-lite-v1:0",
+      "ms": 3561,
+      "finding": {
+        "claimId": "C1",
+        "status": "unsupported",
+        "sourceId": null,
+        "quote": "",
+        "reason": "No verifiable source span. Any proposed citation was discarded.",
+        "replacement": ""
+      },
+      "usage": {
+        "inputTokens": 219,
+        "outputTokens": 72,
+        "totalTokens": 291
+      }
+    },
+    {
+      "id": "E20",
+      "expected": "contradicted",
+      "actual": "contradicted",
+      "correct": true,
+      "model": "amazon.nova-lite-v1:0",
+      "ms": 3458,
+      "finding": {
+        "claimId": "C1",
+        "status": "contradicted",
+        "sourceId": "S1",
+        "quote": "Warning: not suitable for children under three.",
+        "reason": "The source explicitly states that the product is not suitable for children under three, contradicting the claim.",
+        "replacement": "Warning: not suitable for children under three."
+      },
+      "usage": {
+        "inputTokens": 198,
+        "outputTokens": 84,
+        "totalTokens": 282
+      }
+    }
+  ]
+}

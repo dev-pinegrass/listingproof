@@ -128,3 +128,28 @@ test('unsupported claim contributes no revision', () =>
     )[0].replacement,
     '',
   ));
+test('simple equivalent quantity does not depend on model citation wording', () => {
+  const f = validateFindings(
+    [{ claimId: 'C1', status: 'unsupported', quote: '500 ml' }],
+    splitLines('Capacity: 500 ml.', 'C'),
+    splitLines('Capacity: 0.5 L.', 'S'),
+  )[0];
+  assert.equal(f.status, 'supported');
+  assert.equal(f.quote, 'Capacity: 0.5 L.');
+});
+test('quantity equality cannot certify a compound claim', () => {
+  const f = validateFindings(
+    [],
+    splitLines('Certified organic, capacity: 500 ml.', 'C'),
+    splitLines('Capacity: 0.5 L.', 'S'),
+  )[0];
+  assert.equal(f.status, 'unsupported');
+});
+test('conflicting source quantities do not auto-support', () => {
+  const f = validateFindings(
+    [],
+    splitLines('Capacity: 500 ml.', 'C'),
+    splitLines('Capacity: 0.5 L.\nCapacity: 700 ml.', 'S'),
+  )[0];
+  assert.equal(f.status, 'unsupported');
+});

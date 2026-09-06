@@ -87,6 +87,35 @@ export function validateFindings(
   if (!Array.isArray(raw))
     throw Error('Model returned an invalid findings array.');
   return claims.map((claim) => {
+    // Resolve only a whole, single-attribute quantity line. Never promote a
+    // compound assertion merely because one number matches.
+    const quantityOnly = (text: string) =>
+      /^(?:capacity:\s*)?\d+(?:\.\d+)?\s*(?:ml|millilit(?:er|re)s?|l|lit(?:er|re)s?)\.?$/i.test(
+        text.trim(),
+      ) || /^pack\s+(?:of\s+)?\d+\.?$/i.test(text.trim());
+    if (quantityOnly(claim.text)) {
+      const candidates = sources.filter(
+        (s) => quantityOnly(s.text) && numericCheck(claim.text, s.text),
+      );
+      if (candidates.length === 1) {
+        const source = candidates[0],
+          check = numericCheck(claim.text, source.text)!;
+        const status = check.equal
+          ? ('supported' as const)
+          : ('contradicted' as const);
+        return {
+          claimId: claim.id,
+          status,
+          sourceId: source.id,
+          quote: source.text,
+          reason: check.equal
+            ? 'The quantities are equivalent after unit normalization.'
+            : 'The supplier quantity differs from the listing.',
+          replacement: check.equal ? claim.text : source.text,
+          numericCheck: check.detail,
+        };
+      }
+    }
     const matches = raw.filter(
       (r) => r && typeof r === 'object' && r.claimId === claim.id,
     );
