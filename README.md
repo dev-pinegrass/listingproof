@@ -12,7 +12,7 @@ No marketplace login, posting, source fetching, or stored customer database. Rep
 
 Node 22.13+, npm. `npm ci` then `npm run dev -- --port 3102`.
 
-Configure server-only AWS_BEARER_TOKEN_BEDROCK, BEDROCK_REGION and BEDROCK_MODEL_ID using the environment template. The default Nova Lite model is a starting configuration, not a claim of account availability. AWS temporary sessions and short-term tokens expire; ensure valid access during judging. Keep tokens out of Git and browser code. A scoped backend identity with automated renewal is required for a durable live deployment.
+No credentials are required for the built-in fixture preview or default tests. For live analysis, put BEDROCK_BACKEND_URL and BEDROCK_BACKEND_TOKEN in an ignored .dev.vars file; see [backend setup](aws-backend/README.md). Alternatively configure the direct server-only AWS settings from .env.example. Temporary AWS tokens expire. Never commit credentials. The hosted prototype uses a Lambda execution role scoped to Nova Lite, with AWS-managed credential rotation.
 
 Fixture preview is explicitly synthetic and accepts only the exact built-in sample. It does not call AI and will reject edited input. Missing Bedrock access produces an error, never a silent fixture fallback.
 
@@ -26,7 +26,7 @@ With local server running: `node --experimental-strip-types --test tests/http.te
 
 ## Limits
 
-Exact source provenance does not prove a model's semantic conclusion. A source may be incorrect. Numeric checks cover simple volume and pack expressions only, not every unit, range, or composite claim. Each line should contain one factual claim. All outputs need human review; this is not product or legal certification. Manual draft edits are not reverified. No model evaluation score is claimed before testing real Bedrock output against a held-out reference set.
+Exact source provenance does not prove a model's semantic conclusion. A source may be incorrect. Numeric checks cover simple volume and pack expressions only, not every unit, range, or composite claim. Each line should contain one factual claim. All outputs need human review; this is not product or legal certification. Manual draft edits are not reverified. The initial live evaluation matched 20/20 development-authored synthetic cases; this was not a blind or independent benchmark. See [evaluation notes](evaluation/README.md).
 
 Hackathon rules impose no AI provider requirement. Bedrock was selected to use the existing AWS ecosystem. See HACKATHON.md for submission requirements and deadlines.
 
