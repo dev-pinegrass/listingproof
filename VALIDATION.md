@@ -9,3 +9,6 @@ The backend rejected an unauthenticated request with 401 and returned actual mod
 No browser visual or interaction QA was requested or performed. Deployment success and local HTTP testing do not establish hosted browser end-to-end behavior. Optional WebMCP read-back lacks a supported validation context in this run.
 
 Installation reported 11 dependency advisories (1 low, 2 moderate, 8 high). No automatic breaking upgrades applied. Exact provenance is not semantic correctness; every output needs human review.
+
+Fresh public checkout verification: npm ci succeeded; all 15 domain tests and 4 HTTP tests passed; TypeScript and production build passed. No private credentials were copied. These repeatable checks use only fixture mode.
+
