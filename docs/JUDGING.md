@@ -1,6 +1,6 @@
 # Judge walkthrough
 
-ListingProof is an individual AI Builders entry by Fatima Farhana Sheikh, created September 6, 2026 with Codex assistance. The hosted prototype is currently private; judging access must be granted before submitting its URL as a working demo.
+ListingProof is an individual AI Builders entry by Fatima Farhana Sheikh, created September 6, 2026 with Codex assistance. The hosted prototype is publicly accessible at https://listingproof.augustusrex.chatgpt.site. A live public API check on September 13, 2026 correctly handled equivalent capacity, a contradictory pack count and an unsupported certification. This is a synthetic integration check, not an independent evaluation.
 
 ## Run locally without credentials
 

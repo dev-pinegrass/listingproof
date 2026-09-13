@@ -1,0 +1,74 @@
+{
+  "checkedAt": "2026-09-13T09:44:13.146Z",
+  "status": 200,
+  "report": {
+    "id": "fa592528-9330-440c-a5b5-2a3642d83e48",
+    "created": "2026-09-13T09:44:13.016Z",
+    "mode": "bedrock",
+    "listing": "Bottle capacity is 1 litre.\nPack contains 4 bottles.\nCertified organic.",
+    "source": "Bottle capacity: 1000 ml.\nPack quantity: 2 bottles.",
+    "claims": [
+      {
+        "id": "C1",
+        "text": "Bottle capacity is 1 litre.",
+        "start": 0,
+        "end": 27
+      },
+      {
+        "id": "C2",
+        "text": "Pack contains 4 bottles.",
+        "start": 28,
+        "end": 52
+      },
+      {
+        "id": "C3",
+        "text": "Certified organic.",
+        "start": 53,
+        "end": 71
+      }
+    ],
+    "sources": [
+      {
+        "id": "S1",
+        "text": "Bottle capacity: 1000 ml.",
+        "start": 0,
+        "end": 25
+      },
+      {
+        "id": "S2",
+        "text": "Pack quantity: 2 bottles.",
+        "start": 26,
+        "end": 51
+      }
+    ],
+    "findings": [
+      {
+        "claimId": "C1",
+        "status": "supported",
+        "sourceId": "S1",
+        "quote": "Bottle capacity: 1000 ml.",
+        "reason": "The claim that the bottle capacity is 1 litre is supported by the source stating the bottle capacity is 1000 ml, which is equivalent to 1 litre.",
+        "replacement": "Bottle capacity is 1 litre.",
+        "numericCheck": "1000 ml vs 1000 ml"
+      },
+      {
+        "claimId": "C2",
+        "status": "contradicted",
+        "sourceId": "S2",
+        "quote": "Pack quantity: 2 bottles.",
+        "reason": "The claim that the pack contains 4 bottles is contradicted by the source stating the pack contains 2 bottles.",
+        "replacement": "Pack quantity: 2 bottles."
+      },
+      {
+        "claimId": "C3",
+        "status": "unsupported",
+        "sourceId": null,
+        "quote": "",
+        "reason": "No verifiable source span. Any proposed citation was discarded.",
+        "replacement": ""
+      }
+    ],
+    "model": "amazon.nova-lite-v1:0",
+    "durationMs": 2948
+  }
+}
